@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- TODO: Update blank fragment layout -->
+<LinearLayout
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal">
+<com.zhongying.zy.sharetrash.widge.ClearEditText
+    android:id="@+id/et_search"
+    android:layout_width="0dp"
+    android:layout_height="50dp"
+    android:layout_weight="9"
+    android:background="@drawable/shape_wihte_frame"
+    android:hint="@string/serch"
+    />
+    <ImageView
+        android:id="@+id/map"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:src="@drawable/map"
+        android:layout_weight="2"
+        android:background="@drawable/shape_wihte_frame"
+        />
+</LinearLayout>
+    <ListView
+        android:id="@+id/user_list"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+</RelativeLayout>
