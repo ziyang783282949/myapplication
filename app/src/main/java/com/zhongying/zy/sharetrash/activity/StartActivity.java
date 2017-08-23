@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.lzy.widget.AlphaIndicator;
+import com.orhanobut.hawk.Hawk;
 import com.zhongying.zy.sharetrash.R;
 import com.zhongying.zy.sharetrash.fragment.FourFragment;
 import com.zhongying.zy.sharetrash.fragment.TextFragment;
@@ -23,6 +24,7 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+        Hawk.init(this).build();
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(new MainAdapter(getSupportFragmentManager()));
         AlphaIndicator alphaIndicator = (AlphaIndicator) findViewById(R.id.alphaIndicator);

@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.orhanobut.hawk.Hawk;
 import com.zhongying.zy.sharetrash.R;
 import com.zhongying.zy.sharetrash.ReferenceRetrofit.SharedPreferencesUtils;
 import com.zhongying.zy.sharetrash.activity.UserLogin;
@@ -40,9 +41,12 @@ public class ThreeFragment extends Fragment {
         first.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //String userinfo= (String) SharedPreferencesUtils.getParam(getContext(),"String","");
-                //Toast.makeText(getActivity(),userinfo+"zy",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(getActivity(), Credit.class));
+                if(Hawk.contains("sessionId")) {
+                    String name=Hawk.get("sessionId").toString();
+                    //String userinfo= (String) SharedPreferencesUtils.getParam(getContext(),"String","");
+                    Toast.makeText(getActivity(), name, Toast.LENGTH_LONG).show();
+                    //startActivity(new Intent(getActivity(), Credit.class));
+                }
             }
         });
         return view;

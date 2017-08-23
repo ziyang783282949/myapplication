@@ -9,6 +9,16 @@ import java.io.Serializable;
 public class UserInfo implements Serializable{
     private String username;
     private String password;
+    private String cookie;
+
+    public String getCookie() {
+        return cookie;
+    }
+
+    public void setCookie(String cookie) {
+        this.cookie = cookie;
+    }
+
     //1为男
     private String sex;
     private String urlusericon;

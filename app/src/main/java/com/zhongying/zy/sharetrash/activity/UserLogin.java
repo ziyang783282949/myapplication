@@ -71,7 +71,7 @@ public class UserLogin extends NetworkBaseActivity implements View.OnClickListen
         Gson gson =new Gson();
         String route=gson.toJson(user);
         RequestBody body=RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"),route);
-        observable = RetroFactory.getInstance().Login("UserLogin",body);
+        observable = RetroFactory.getInstance().Login("login",body);
         observable.compose(composeFunction).subscribe(new BaseObserver<UserInfo>(this,pd) {
             @Override
             public void onHandleSuccess(UserInfo userInfo) {

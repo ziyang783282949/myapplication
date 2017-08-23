@@ -72,7 +72,7 @@ public class UserRegist extends NetworkBaseActivity implements View.OnClickListe
         Gson gson =new Gson();
         String route=gson.toJson(user);
         RequestBody body=RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"),route);
-        observable = RetroFactory.getInstance().Regist("UserRegist",body);
+        observable = RetroFactory.getInstance().Regist("shop",body);
         observable.compose(composeFunction).subscribe(new BaseObserver<UserInfo>(this,pd) {
             @Override
             public void onHandleSuccess(UserInfo userInfo) {
