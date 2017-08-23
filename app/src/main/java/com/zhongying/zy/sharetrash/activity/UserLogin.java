@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.orhanobut.hawk.Hawk;
 import com.zhongying.zy.sharetrash.R;
 import com.zhongying.zy.sharetrash.ReferenceRetrofit.BaseObserver;
 import com.zhongying.zy.sharetrash.ReferenceRetrofit.NetworkBaseActivity;
@@ -45,11 +46,11 @@ public class UserLogin extends NetworkBaseActivity implements View.OnClickListen
     private void getPreUserInfo() {
         /*SharedPreferences preferences=getSharedPreferences("user", Context.MODE_PRIVATE);
         String userinfo=preferences.getString("userinfo","");*/
-        String userinfo= (String) SharedPreferencesUtils.getParam(UserLogin.this,"String","");
-        Gson gson=new Gson();
-        UserInfo user2=new UserInfo();
-        Log.i("info",userinfo);
-        user2=gson.fromJson(userinfo,UserInfo.class);
+        //String userinfo= (String) SharedPreferencesUtils.getParam(UserLogin.this,"String","");
+        //Gson gson=new Gson();
+        UserInfo user2= Hawk.get("user");
+        //Log.i("info",userinfo);
+        //user2=gson.fromJson(userinfo,UserInfo.class);
         if(user2!=null){
             username.setText(user2.getUsername());
             password.setText(user2.getPassword());

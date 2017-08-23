@@ -7,40 +7,23 @@ import java.io.Serializable;
  */
 
 public class UserInfo implements Serializable{
+    private int id;
+
     private String username;
     private String password;
+    private String sex;
+    private String urlUserIcon;
+    private int credits;
+    private int changeCredits;
+    private int contributionCredits;
     private String cookie;
 
-    public String getCookie() {
-        return cookie;
+    public int getId() {
+        return id;
     }
 
-    public void setCookie(String cookie) {
-        this.cookie = cookie;
-    }
-
-    //1为男
-    private String sex;
-    private String urlusericon;
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public String getUrlusericon() {
-        return urlusericon;
-    }
-
-    public void setUrlusericon(String urlusericon) {
-        this.urlusericon = urlusericon;
-    }
-
-    public UserInfo() {
-        super();
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -59,6 +42,57 @@ public class UserInfo implements Serializable{
         this.password = password;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getUrlUserIcon() {
+        return urlUserIcon;
+    }
+
+    public void setUrlUserIcon(String urlUserIcon) {
+        this.urlUserIcon = urlUserIcon;
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+
+    public void setCredits(int credits) {
+        this.credits = credits;
+    }
+
+    public int getChangeCredits() {
+        return changeCredits;
+    }
+
+    public void setChangeCredits(int changeCredits) {
+        this.changeCredits = changeCredits;
+    }
+
+    public int getContributionCredits() {
+        return contributionCredits;
+    }
+
+    public void setContributionCredits(int contributionCredits) {
+        this.contributionCredits = contributionCredits;
+    }
+
+    public String getCookie() {
+        return cookie;
+    }
+
+    public void setCookie(String cookie) {
+        this.cookie = cookie;
+    }
+
+    public UserInfo() {
+    }
+
     @Override
     public String toString() {
         return "UserInfo{" +
@@ -71,7 +105,7 @@ public class UserInfo implements Serializable{
         this.username = username;
         this.password = password;
         this.sex = sex;
-        this.urlusericon = urlusericon;
+        this.urlUserIcon = urlusericon;
     }
 
     public UserInfo(String username, String password) {

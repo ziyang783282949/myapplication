@@ -172,7 +172,7 @@ public class UserProfile extends NetworkBaseActivity {
 
         }
         user.setSex(man.isChecked()?"1":"0");
-        user.setUrlusericon(imgPath.getText().toString());
+        user.setUrlUserIcon(imgPath.getText().toString());
         String route=gson.toJson(user);
         Log.i("info",route);
         observable = RetroFactory.getInstance().uploadMemberIcon("Kass",route,parts);

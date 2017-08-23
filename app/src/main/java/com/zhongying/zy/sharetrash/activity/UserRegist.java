@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.orhanobut.hawk.Hawk;
 import com.zhongying.zy.sharetrash.R;
 import com.zhongying.zy.sharetrash.ReferenceRetrofit.BaseObserver;
 import com.zhongying.zy.sharetrash.ReferenceRetrofit.NetworkBaseActivity;
@@ -72,7 +73,7 @@ public class UserRegist extends NetworkBaseActivity implements View.OnClickListe
         Gson gson =new Gson();
         String route=gson.toJson(user);
         RequestBody body=RequestBody.create(okhttp3.MediaType.parse("application/json; charset=utf-8"),route);
-        observable = RetroFactory.getInstance().Regist("shop",body);
+        observable = RetroFactory.getInstance().Regist("regist",body);
         observable.compose(composeFunction).subscribe(new BaseObserver<UserInfo>(this,pd) {
             @Override
             public void onHandleSuccess(UserInfo userInfo) {
@@ -82,11 +83,10 @@ public class UserRegist extends NetworkBaseActivity implements View.OnClickListe
                     SharedPreferences.Editor editor=preferences.edit();
                     editor.putString("userinfo",userInfo.toString().substring(8));
                     editor.commit();*/
-                    SharedPreferencesUtils.setParam(getApplication(),"String",userInfo.toString().substring(8));
+                    Hawk.put("user",userInfo);
                     Toast.makeText(getApplicationContext(),userInfo.toString(), Toast.LENGTH_LONG).show();
                     startActivity(new Intent(getApplicationContext(),UserLogin.class));
                     finish();
-                    System.exit(0);
                 } }
         });
     }
