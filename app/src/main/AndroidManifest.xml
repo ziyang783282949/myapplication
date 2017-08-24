@@ -61,7 +61,7 @@
 
         </activity>
         <activity android:name=".activity.creditPackages.Credit"
-            android:theme="@style/AppTheme">
+            android:theme="@style/ZyTheme">
 
         </activity>
     </application>

@@ -3,13 +3,17 @@ package com.zhongying.zy.sharetrash.activity.creditPackages;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.RelativeLayout;
 
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
 import com.zhongying.zy.sharetrash.R;
 import com.zhongying.zy.sharetrash.ReferenceRetrofit.NetworkBaseActivity;
-import com.zhongying.zy.sharetrash.fragment.TextFragment;
-import com.zhongying.zy.sharetrash.fragment.TwoFragment;
+import com.zhongying.zy.sharetrash.fragment.rankFragment.RecyclerViewFragment;
+import com.zhongying.zy.sharetrash.fragment.rankFragment.TextFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,12 +22,16 @@ import butterknife.ButterKnife;
  * Created by zy on 2017/7/19.
  */
 
-public class Credit extends NetworkBaseActivity{
+public class Credit extends NetworkBaseActivity {
     @BindView(R.id.materialViewPager)
     MaterialViewPager mViewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
+        //去除title
+        hideTitle();
         setContentView(R.layout.credit);
         ButterKnife.bind(this);
         mViewPager.getViewPager().setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
@@ -38,7 +46,7 @@ public class Credit extends NetworkBaseActivity{
                     //case 2:
                     //    return WebViewFragment.newInstance();
                     default:
-                        return TextFragment.newInstance("");
+                        return RecyclerViewFragment.newInstance();
                 }
             }
 
@@ -96,6 +104,11 @@ public class Credit extends NetworkBaseActivity{
         mViewPager.getPagerTitleStrip().setViewPager(mViewPager.getViewPager());
         //viewpager();
         //setmateriallisten();
+    }
+
+    private void hideTitle() {
+        RelativeLayout title= (RelativeLayout) this.findViewById(R.id.layout_titlebar);
+        title.setVisibility(View.GONE);
     }
 
     private void setmateriallisten() {

@@ -1,4 +1,4 @@
-package com.zhongying.zy.sharetrash.fragment;
+package com.zhongying.zy.sharetrash.fragment.rankFragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

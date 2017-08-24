@@ -154,10 +154,12 @@ public class UserProfile extends NetworkBaseActivity {
         List<MultipartBody.Part> parts = builder.build().parts();
 
         UserInfo user= Hawk.get("user");
-        user.setUsername(user.getUsername());
-        user.setSex(man.isChecked()?"1":"0");
+        if(user!=null){
+            user.setUsername(user.getUsername());
+            user.setSex(man.isChecked()?"1":"0");
+            user.setUrlUserIcon(imgPath.getText().toString());
+        }
 
-        user.setUrlUserIcon(imgPath.getText().toString());
         String route=new Gson().toJson(user);
         observable = RetroFactory.getInstance().uploadMemberIcon("profile",route,parts);
         observable.compose(composeFunction).subscribe(new BaseObserver<UserInfo>(this,pd) {

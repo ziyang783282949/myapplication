@@ -11,7 +11,7 @@ import com.lzy.widget.AlphaIndicator;
 import com.orhanobut.hawk.Hawk;
 import com.zhongying.zy.sharetrash.R;
 import com.zhongying.zy.sharetrash.fragment.FourFragment;
-import com.zhongying.zy.sharetrash.fragment.TextFragment;
+import com.zhongying.zy.sharetrash.fragment.rankFragment.TextFragment;
 import com.zhongying.zy.sharetrash.fragment.ThreeFragment;
 import com.zhongying.zy.sharetrash.fragment.TwoFragment;
 

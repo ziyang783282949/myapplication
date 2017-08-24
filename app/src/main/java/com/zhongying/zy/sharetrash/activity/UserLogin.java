@@ -76,6 +76,7 @@ public class UserLogin extends NetworkBaseActivity implements View.OnClickListen
         observable.compose(composeFunction).subscribe(new BaseObserver<UserInfo>(this,pd) {
             @Override
             public void onHandleSuccess(UserInfo userInfo) {
+                Hawk.put("user",userInfo);
                 Toast.makeText(getApplicationContext(),"登录成功",Toast.LENGTH_LONG).show();
             }
         });
