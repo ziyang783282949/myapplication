@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroFactory {
     //private static String baseUrl = "http://fchieg.natappfree.cc/porkerticket/";
-    private static String baseUrl = "http://7wkw9h.natappfree.cc/porkerticket/";
+    private static String baseUrl = "http://yzexvz.natappfree.cc/porkerticket/";
     private RetroFactory() {
     }
 

@@ -44,8 +44,8 @@ public class ThreeFragment extends Fragment {
                 if(Hawk.contains("sessionId")) {
                     String name=Hawk.get("sessionId").toString();
                     //String userinfo= (String) SharedPreferencesUtils.getParam(getContext(),"String","");
-                    Toast.makeText(getActivity(), name, Toast.LENGTH_LONG).show();
-                    //startActivity(new Intent(getActivity(), Credit.class));
+                    //Toast.makeText(getActivity(), name, Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getActivity(), Credit.class));
                 }
             }
         });

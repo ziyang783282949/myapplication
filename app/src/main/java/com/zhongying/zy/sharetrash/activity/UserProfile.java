@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.orhanobut.hawk.Hawk;
 import com.zhongying.zy.sharetrash.R;
 import com.zhongying.zy.sharetrash.ReferenceRetrofit.BaseObserver;
 import com.zhongying.zy.sharetrash.ReferenceRetrofit.NetworkBaseActivity;
@@ -152,30 +153,13 @@ public class UserProfile extends NetworkBaseActivity {
 
         List<MultipartBody.Part> parts = builder.build().parts();
 
-        UserInfo user=new UserInfo();
-        String userinfo= (String) SharedPreferencesUtils.getParam(UserProfile.this,"String","");
-        Gson gson=new Gson();
-        UserInfo user2=new UserInfo();
-
-        user2=gson.fromJson(userinfo,UserInfo.class);
-        String username = "";
-        String password="";
-        try {
-             username=URLEncoder.encode(user2.getUsername(),"utf-8");
-            password=URLEncoder.encode(user2.getPassword(),"utf-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        user.setUsername(username);
-        user.setPassword(password);
-        if(man.isChecked()){
-
-        }
+        UserInfo user= Hawk.get("user");
+        user.setUsername(user.getUsername());
         user.setSex(man.isChecked()?"1":"0");
+
         user.setUrlUserIcon(imgPath.getText().toString());
-        String route=gson.toJson(user);
-        Log.i("info",route);
-        observable = RetroFactory.getInstance().uploadMemberIcon("Kass",route,parts);
+        String route=new Gson().toJson(user);
+        observable = RetroFactory.getInstance().uploadMemberIcon("profile",route,parts);
         observable.compose(composeFunction).subscribe(new BaseObserver<UserInfo>(this,pd) {
 
             @Override
