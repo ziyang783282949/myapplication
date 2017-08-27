@@ -1,6 +1,7 @@
 package com.zhongying.zy.sharetrash.ReferenceRetrofit;
 
 import com.zhongying.zy.sharetrash.UserService.UserInfo;
+import com.zhongying.zy.sharetrash.entity.RankGson;
 
 import java.util.List;
 import java.util.Map;
@@ -37,4 +38,10 @@ public interface RetrofitService {
     @POST("{config}")
     Observable<BaseEntity<UserInfo>> uploadMemberIcon(@Path("config") String config,@Part("data") String des,@Part List<MultipartBody.Part> partList);
 
+    /**
+     * 获取积分排名
+     */
+    @Headers({"Content-Type: application/json","Accept: application/json"})
+    @POST("{config}")
+    Observable<BaseEntity<RankGson>> getCredit(@Path("config") String config);
 }

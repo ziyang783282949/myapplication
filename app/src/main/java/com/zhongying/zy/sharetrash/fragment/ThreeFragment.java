@@ -15,7 +15,7 @@ import com.orhanobut.hawk.Hawk;
 import com.zhongying.zy.sharetrash.R;
 import com.zhongying.zy.sharetrash.ReferenceRetrofit.SharedPreferencesUtils;
 import com.zhongying.zy.sharetrash.activity.UserLogin;
-import com.zhongying.zy.sharetrash.activity.creditPackages.Credit;
+import com.zhongying.zy.sharetrash.ui.ranking.creditPackage.activity.Credit;
 
 import java.io.IOException;
 
@@ -41,6 +41,7 @@ public class ThreeFragment extends Fragment {
         first.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(getActivity(), Credit.class));
                 if(Hawk.contains("sessionId")) {
                     String name=Hawk.get("sessionId").toString();
                     //String userinfo= (String) SharedPreferencesUtils.getParam(getContext(),"String","");

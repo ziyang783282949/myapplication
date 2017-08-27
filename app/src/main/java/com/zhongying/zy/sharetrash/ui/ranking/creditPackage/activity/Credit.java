@@ -1,19 +1,19 @@
-package com.zhongying.zy.sharetrash.activity.creditPackages;
+package com.zhongying.zy.sharetrash.ui.ranking.creditPackage.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
 import com.zhongying.zy.sharetrash.R;
 import com.zhongying.zy.sharetrash.ReferenceRetrofit.NetworkBaseActivity;
-import com.zhongying.zy.sharetrash.fragment.rankFragment.RecyclerViewFragment;
-import com.zhongying.zy.sharetrash.fragment.rankFragment.TextFragment;
+import com.zhongying.zy.sharetrash.ui.ranking.creditPackage.fragment.RecyclerViewFragment;
+import com.zhongying.zy.sharetrash.ui.ranking.creditPackage.fragment.TextFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
  * Created by zy on 2017/7/19.
  */
 
-public class Credit extends NetworkBaseActivity {
+public class Credit extends AppCompatActivity {
     @BindView(R.id.materialViewPager)
     MaterialViewPager mViewPager;
 
@@ -31,7 +31,7 @@ public class Credit extends NetworkBaseActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         //去除title
-        hideTitle();
+        //hideTitle();
         setContentView(R.layout.credit);
         ButterKnife.bind(this);
         mViewPager.getViewPager().setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {

@@ -19,6 +19,7 @@ public class AddCookiesInterceptor implements Interceptor {
         if(Hawk.contains("sessionId")){
             builder.addHeader("Cookie", "sessionId="+Hawk.get("sessionId").toString());
         }
+        //builder.addHeader("Cookie", "sessionId=zzy");
         return chain.proceed(builder.build());
     }
 }

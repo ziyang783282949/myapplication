@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:gravity="center_vertical"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:background="@android:color/white">
+
+    <com.zhongying.zy.sharetrash.UserService.View.RoundImageView
+        android:id="@+id/icon"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/preuserpicture"
+        android:layout_marginStart="96dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:text="id" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/id"
+        android:layout_marginStart="44dp"
+        android:layout_toEndOf="@+id/icon"
+        android:text="name" />
+
+    <TextView
+        android:id="@+id/point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="30dp"
+        android:text="point" />
+
+
+</RelativeLayout>

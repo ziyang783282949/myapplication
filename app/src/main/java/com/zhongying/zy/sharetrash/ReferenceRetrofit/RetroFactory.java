@@ -3,6 +3,7 @@ package com.zhongying.zy.sharetrash.ReferenceRetrofit;
 
 import com.zhongying.zy.sharetrash.UserService.Utils.AddCookiesInterceptor;
 import com.zhongying.zy.sharetrash.UserService.Utils.ReceivedCookiesInterceptor;
+import com.zhongying.zy.sharetrash.constant.AppConfig;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -17,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroFactory {
     //private static String baseUrl = "http://fchieg.natappfree.cc/porkerticket/";
-    private static String baseUrl = "http://yzexvz.natappfree.cc/porkerticket/";
+    private static String baseUrl = AppConfig.BASE_URL;
     private RetroFactory() {
     }
 
@@ -39,4 +40,5 @@ public class RetroFactory {
     public static RetrofitService getInstance() {
         return retrofitService;
     }
+
 }

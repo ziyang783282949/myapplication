@@ -38,7 +38,7 @@
         <!-- 设置key -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="9f7c1f6e145fff37fdf1aae703c6e566"></meta-data>
+            android:value="9f7c1f6e145fff37fdf1aae703c6e566" />
         <!-- 声明定位service -->
         <service android:name="com.amap.api.location.APSService" />
 
@@ -57,13 +57,11 @@
             android:name=".activity.Location"
             android:label="@string/title_activity_location"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.UserProfile">
-
-        </activity>
-        <activity android:name=".activity.creditPackages.Credit"
-            android:theme="@style/ZyTheme">
-
-        </activity>
+        <activity android:name=".activity.UserProfile"></activity>
+        <activity
+            android:name=".ui.ranking.creditPackage.activity.Credit"
+            android:theme="@style/ZyTheme"></activity>
+        <activity android:name=".ui.ranking.creditPackage.activity.Main2Activity"></activity>
     </application>
 
 </manifest>
