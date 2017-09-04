@@ -11,6 +11,7 @@ import com.lzy.widget.AlphaIndicator;
 import com.orhanobut.hawk.Hawk;
 import com.zhongying.zy.sharetrash.R;
 import com.zhongying.zy.sharetrash.fragment.FourFragment;
+import com.zhongying.zy.sharetrash.fragment.OneFragment;
 import com.zhongying.zy.sharetrash.ui.ranking.creditPackage.fragment.TextFragment;
 import com.zhongying.zy.sharetrash.fragment.ThreeFragment;
 import com.zhongying.zy.sharetrash.fragment.TwoFragment;
@@ -41,7 +42,7 @@ public class StartActivity extends AppCompatActivity {
 
         public MainAdapter(FragmentManager fm) {
             super(fm);
-            fragments.add(TextFragment.newInstance(titles[0]));
+            fragments.add(OneFragment.newInstance());
             fragments.add(TwoFragment.newInstance());
             fragments.add(ThreeFragment.newInstance());
             fragments.add(FourFragment.newInstance());
