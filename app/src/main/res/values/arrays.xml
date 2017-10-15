@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="pictures">
+        <item>@drawable/env1</item>
+        <item>@drawable/env2</item>
+        <item>@drawable/env3</item>
+        <item>@drawable/env1</item>
+        <item>@drawable/env2</item>
+        <item>@drawable/env3</item>
+    </array>
+    <array name="items">
+        <item>积分查询</item>
+        <item>积分兑换</item>
+        <item>设备导航</item>
+        <item>种植技巧</item>
+        <item>绿色群组</item>
+        <item>特色活动</item>
+    </array>
+</resources>
