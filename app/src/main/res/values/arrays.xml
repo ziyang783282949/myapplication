@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="pictures">
-        <item>@drawable/env1</item>
-        <item>@drawable/env2</item>
-        <item>@drawable/env3</item>
-        <item>@drawable/env1</item>
-        <item>@drawable/env2</item>
-        <item>@drawable/env3</item>
+        <item>@drawable/people</item>
+        <item>@drawable/shop</item>
+        <item>@drawable/navigator</item>
+        <item>@drawable/tree</item>
+        <item>@drawable/crowd</item>
+        <item>@drawable/activity</item>
     </array>
     <array name="items">
         <item>积分查询</item>

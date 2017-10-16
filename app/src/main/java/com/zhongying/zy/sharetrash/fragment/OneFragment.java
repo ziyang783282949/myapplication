@@ -31,7 +31,6 @@ import java.util.List;
  */
 
 public class OneFragment extends Fragment {
-    private ImageView ttttt;
     private RollPagerView rollPagerView;
     private RecyclerView mRecyclerView;
     private WaterFallAdapter mAdapter;
@@ -39,7 +38,6 @@ public class OneFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_one,container,false);
-        ttttt= (ImageView) view.findViewById(R.id.tttttttt);
         bindView(view);
         return view;
     }
