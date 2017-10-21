@@ -83,11 +83,12 @@
                     <!-- 分割线 -->
                     <View style="@style/bg_line" />
                     <!-- 无圆角-->
-                    <LinearLayout style="@style/mid_layout">
+                    <LinearLayout style="@style/mid_layout"
+                        android:id="@+id/qrButton">
 
                         <TextView
                             style="@style/usertext"
-                            android:text="会员中心" />
+                            android:text="二维码" />
 
                         <ImageView style="@style/img_arrow" />
                     </LinearLayout>

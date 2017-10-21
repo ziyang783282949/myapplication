@@ -57,11 +57,12 @@
             android:name=".activity.Location"
             android:label="@string/title_activity_location"
             android:theme="@style/AppTheme" />
-        <activity android:name=".activity.UserProfile"></activity>
+        <activity android:name=".activity.UserProfile" />
         <activity
             android:name=".ui.ranking.creditPackage.activity.Credit"
-            android:theme="@style/ZyTheme"></activity>
-        <activity android:name=".ui.ranking.creditPackage.activity.Main2Activity"></activity>
+            android:theme="@style/ZyTheme" />
+        <activity android:name=".ui.ranking.creditPackage.activity.Main2Activity" />
+        <activity android:name=".activity.QrCodeActivity"></activity>
     </application>
 
 </manifest>

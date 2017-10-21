@@ -44,7 +44,7 @@ public class CreditModel implements RankContrant.Model{
                        newsList=rankGsonBaseEntity.getData().getNewslist();
                        for(int i=0;i<newsList.size();i++){
                            String userIcon=newsList.get(i).getIcon().substring(newsList.get(i).getIcon().indexOf("\\")+1);
-                           userIcon= AppConfig.BASE_URL+userIcon;
+                           userIcon= AppConfig.Picture+userIcon;
                            userIcon=userIcon.replace("\\","/");
                            newsList.get(i).setIcon(userIcon);
                        }

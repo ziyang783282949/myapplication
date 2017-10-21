@@ -53,8 +53,8 @@ public class OneFragment extends Fragment {
         mRecyclerView.setLayoutManager(new
                 StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         mAdapter = new WaterFallAdapter(getActivity());
-        mRecyclerView.setAdapter(mAdapter);
-        initData();
+        //mRecyclerView.setAdapter(mAdapter);
+        //initData();
 
     }
     public void initData(){

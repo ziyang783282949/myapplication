@@ -1,5 +1,6 @@
 package com.zhongying.zy.sharetrash.activity;
 
+import android.Manifest;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
@@ -17,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.lyf.yflibrary.Permission;
+import com.example.lyf.yflibrary.PermissionResult;
 import com.google.gson.Gson;
 import com.orhanobut.hawk.Hawk;
 import com.zhongying.zy.sharetrash.R;
@@ -45,6 +48,11 @@ import static com.zhongying.zy.sharetrash.R.id.man;
  */
 
 public class UserProfile extends NetworkBaseActivity {
+    private String[] REQUEST_PERMISSIONS = new String[]{
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };
+
     private ImageView imgShow = null;
     private TextView imgPath = null;
     private Observable observable;
@@ -57,8 +65,20 @@ public class UserProfile extends NetworkBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.userprofile);
-        initialButton();
-        initialInfomation();
+
+        Permission.checkPermisson(this, REQUEST_PERMISSIONS, new PermissionResult() {
+
+            @Override
+            public void success() {
+                initialButton();
+                initialInfomation();
+            }
+
+            @Override
+            public void fail() {
+                Toast.makeText(getApplicationContext(),"无权限",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void initialInfomation() {
@@ -73,6 +93,7 @@ public class UserProfile extends NetworkBaseActivity {
         imgPath= (TextView) findViewById(R.id.textView3);
         man= (CheckBox) findViewById(R.id.man);
         woman= (CheckBox) findViewById(R.id.woman);
+
         showImage(imgShow);
     }
 

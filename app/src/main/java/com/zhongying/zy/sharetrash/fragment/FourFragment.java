@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.zhongying.zy.sharetrash.R;
+import com.zhongying.zy.sharetrash.activity.QrCodeActivity;
 import com.zhongying.zy.sharetrash.activity.StartActivity;
 import com.zhongying.zy.sharetrash.activity.UserLogin;
 import com.zhongying.zy.sharetrash.activity.UserProfile;
@@ -21,6 +22,7 @@ import com.zhongying.zy.sharetrash.activity.UserProfile;
 public class FourFragment extends Fragment implements View.OnClickListener{
     private LinearLayout loginButton;
     private LinearLayout zy;
+    private LinearLayout qrButton;
     public FourFragment() {
         // Required empty public constructor
     }
@@ -32,6 +34,7 @@ public class FourFragment extends Fragment implements View.OnClickListener{
         init(view);
         loginButton.setOnClickListener(this);
         zy.setOnClickListener(this);
+        qrButton.setOnClickListener(this);
         return view;
     }
     public static FourFragment newInstance(){
@@ -41,6 +44,7 @@ public class FourFragment extends Fragment implements View.OnClickListener{
    public void init(View view){
        loginButton= (LinearLayout) view.findViewById(R.id.loginButton);
         zy= (LinearLayout) view.findViewById(R.id.zy);
+       qrButton= (LinearLayout) view.findViewById(R.id.qrButton);
    }
 
     @Override
@@ -53,6 +57,10 @@ public class FourFragment extends Fragment implements View.OnClickListener{
             }
             case R.id.zy:{
                 startActivity(new Intent(getActivity(), UserProfile.class));
+                break;
+            }
+            case R.id.qrButton:{
+                startActivity(new Intent(getActivity(), QrCodeActivity.class));
                 break;
             }
         }
